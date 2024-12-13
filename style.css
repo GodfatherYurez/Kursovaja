@@ -1,0 +1,221 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #2e3440, #3b4252, #4c566a); /* Базовый нордический фон */
+  color: #eceff4; /* Светлый текст */
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Snowfall Canvas */
+#snowfall {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Canvas не блокирует клики */
+  z-index: 1;
+}
+
+/* Aurora Background Effect */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(72, 209, 204, 0.6), rgba(173, 216, 230, 0.4), rgba(123, 104, 238, 0.5));
+  animation: aurora 5s infinite alternate;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes aurora {
+  0% {
+    filter: blur(10px);
+    opacity: 0.7;
+  }
+  50% {
+    filter: blur(20px);
+    opacity: 0.5;
+  }
+  100% {
+    filter: blur(10px);
+    opacity: 0.8;
+  }
+}
+
+/* Sidebar Navigation */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  background: rgba(59, 66, 82, 0.9); /* Полупрозрачный тёмный фон */
+  padding: 20px;
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 20px;
+}
+
+.sidebar nav ul li a {
+  text-decoration: none;
+  color: #eceff4;
+  font-size: 1.2rem;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.sidebar nav ul li a:hover {
+  color: #a3be8c; /* Зеленый акцент */
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 20px;
+  margin-left: 200px; /* Отступ под боковую панель */
+  background-color: rgba(59, 66, 82, 0.8);
+  color: #eceff4;
+  z-index: 2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  text-shadow: 2px 2px #79b7d2;
+}
+
+/* Main Content */
+main {
+  margin-left: 220px; /* Отступ под боковую панель */
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+section {
+  margin-bottom: 40px;
+  background: rgba(59, 66, 82, 0.8); /* Полупрозрачный блок */
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* Project Cards */
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.project-card {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background: linear-gradient(135deg, #88c0d0, #8fbcbb); /* Градиент карточек */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.project-card h3 {
+  text-align: center;
+  color: #eceff4;
+  padding: 10px;
+}
+
+.project-card .description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(59, 66, 82, 0.9); /* Полупрозрачный фон */
+  color: #eceff4;
+  text-align: center;
+  padding: 10px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .description {
+  transform: translateY(0);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-left: 200px; /* Отступ под боковую панель */
+  background-color: rgba(59, 66, 82, 0.8);
+  color: #eceff4;
+  border-top: 4px solid #2e3440;
+}
+
+/* Buttons */
+button {
+  background: linear-gradient(135deg, #88c0d0, #8fbcbb); /* Нордический градиент */
+  color: #eceff4;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-main a {
+  display: inline-block;
+  background: linear-gradient(135deg, #88c0d0, #8fbcbb);
+  color: #eceff4;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.back-to-main a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-main a:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
