@@ -297,7 +297,7 @@ a:hover {
 .prev-btn, .next-btn {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: 0;
   background-color: rgba(59, 66, 82, 0.8);
   color: #eceff4;
   border: none;
