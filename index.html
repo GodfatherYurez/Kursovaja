@@ -4,22 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Абрамович Ю.А.</title>
+  
+  <!-- Favicon Links -->
+  <link rel="icon" href="i32.ico" type="image/x-icon"> <!-- Для старых браузеров -->
+  <link rel="icon" href="i16.ico" type="image/png" sizes="16x16">
+  <link rel="icon" href="i32.ico" type="image/png" sizes="32x32">
+  <link rel="icon" href="i96.ico" type="image/png" sizes="96x96">
+  
+  <!-- Для устройств Apple -->
+  <link rel="apple-touch-icon" href="i180.ico" sizes="180x180"> 
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Snowfall Canvas -->
   <canvas id="snowfall"></canvas>
 
-  <!-- Sidebar Navigation -->
-  <aside class="sidebar">
+  <!-- Верхняя навигация -->
+  <header class="top-nav">
+    <div class="logo">Абрамович Ю.А.</div>
     <nav>
-      <ul>
+      <ul class="nav-links">
         <li><a href="#intro">Добро пожаловать</a></li>
         <li><a href="#projects">Галерея</a></li>
         <li><a href="#contact">Обратная связь</a></li>
       </ul>
     </nav>
-  </aside>
+  </header>
 
   <!-- Header -->
   <header>
@@ -38,41 +49,40 @@
     </section>
 
     <!-- Projects Section -->
-<section id="projects" class="projects">
-  <h2>Projects</h2>
-  <div class="project-container">
-    <div class="project-card">
-      <a href="project1.html">
-        <img src="project1.png" alt="Project 1 Preview" class="project-preview">
-        <h3>"Привратник"</h3>
-        <p class="description">По-настоящему тяжелый и суровый проект. Сибирский геймджем, трое суток работы,
-        стилизация.</p>
-      </a>
-    </div>
-    <div class="project-card">
-      <a href="project2.html">
-        <img src="project2.1.jpg" alt="Project 2 Preview" class="project-preview">
-        <h3>"Пузырьки"</h3>
-        <p class="description">Пузырьки с волшебной жижей - попытка совместить реализм и стилизацию</p>
-      </a>
-    </div>
-    <div class="project-card">
-      <a href="project3.html">
-        <img src="project3.jpg" alt="Project 3 Preview" class="project-preview">
-        <h3>"Паркинг"</h3>
-        <p class="description">Результат тесного сотрудничества с донецким архитектором-футуристом</p>
-      </a>
-    </div>
-    <div class="project-card">
-      <a href="project4.html">
-        <img src="project4.3.jpg" alt="Project 4 Preview" class="project-preview">
-        <h3>"КНООПС ФЕСТ"</h3>
-        <p class="description">Небольшая работа специально для ЦКТ МИРЭА #работа с текстом</p>
-      </a>
-    </div>
-  </div>
-</section>
-
+    <section id="projects" class="projects">
+      <h2>Галерея</h2>
+      <div class="project-container">
+        <div class="project-card">
+          <a href="project1.html">
+            <img src="project1.png" alt="Project 1 Preview" class="project-preview">
+            <h3>"Привратник"</h3>
+            <p class="description">По-настоящему тяжелый и суровый проект. Сибирский геймджем, трое суток работы,
+            стилизация.</p>
+          </a>
+        </div>
+        <div class="project-card">
+          <a href="project2.html">
+            <img src="project2.1.jpg" alt="Project 2 Preview" class="project-preview">
+            <h3>"Пузырьки"</h3>
+            <p class="description">Пузырьки с волшебной жижей - попытка совместить реализм и стилизацию</p>
+          </a>
+        </div>
+        <div class="project-card">
+          <a href="project3.html">
+            <img src="project3.jpg" alt="Project 3 Preview" class="project-preview">
+            <h3>"Паркинг"</h3>
+            <p class="description">Результат тесного сотрудничества с донецким архитектором-футуристом</p>
+          </a>
+        </div>
+        <div class="project-card">
+          <a href="project4.html">
+            <img src="project4.3.jpg" alt="Project 4 Preview" class="project-preview">
+            <h3>"КНООПС ФЕСТ"</h3>
+            <p class="description">Небольшая работа специально для ЦКТ МИРЭА #работа с текстом</p>
+          </a>
+        </div>
+      </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -80,11 +90,15 @@
       <p>Не стесняйтесь давать обратную связь, ведь она отлично помогает как 
       зрителю, так и творцу. Обсудить работы, предложить заказ или же просто пообщаться
       можно по ссылкам в подвале сайта любыми удобными способами.</p>
+      <ul>
+        <li><a href="mailto:example_mail">Email: yurij-2000@list.ru</a></li>
+        <li><a href="tel:example_phone">Телефон: +7 (916) 640-73-78</a></li>
+      </ul>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2024 Nordic Aurora Portfolio. All rights reserved.</p>
+    <p>&copy; 2024 Портфолио Абрамович Ю.А. All rights reserved.</p>
   </footer>
 
   <!-- JavaScript for Snowfall -->
