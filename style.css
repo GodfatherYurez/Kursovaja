@@ -81,14 +81,18 @@ body::before {
 }
 
 .nav-links li a {
-  text-decoration: none;
-  color: #eceff4;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
+  background: none; /* Убираем фон */
+  color: #88c0d0; /* Цвет из нордической палитры */
+  font-size: 1.5rem; /* Увеличиваем размер иконок для читабельности */
+  padding: 10px; /* Добавляем внутренние отступы */
+  border-radius: 50%; /* Круглая форма */
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .nav-links li a:hover {
-  color: #a3be8c; /* Зеленый акцент */
+  background-color: rgba(59, 66, 82, 0.7); /* Добавляем прозрачный фон при наведении */
+  transform: scale(1.1); /* Лёгкое увеличение */
+  color: #a3be8c; /* Зеленый акцент при наведении */
 }
 
 /* Header */
@@ -235,18 +239,20 @@ a:hover {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-  .nav-links {
-    display: flex; /* Скрываем ссылки на мобильных */
-    flex-direction: column;
-    gap: 10px;
-    background: rgba(59, 66, 82, 0.9);
-    position: absolute;
-    top: 60px;
-    left: 20px;
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  .top-nav {
+    flex-wrap: wrap; /* Перенос строк, чтобы кнопки не перекрывали заголовок */
+    justify-content: center; /* Центрируем содержимое */
   }
+
+  .nav-links {
+    flex-direction: row; /* Располагаем кнопки в один ряд */
+    gap: 15px; /* Увеличиваем расстояние между кнопками */
+  }
+
+  .nav-links li a {
+    font-size: 1.2rem; /* Уменьшаем размер иконок на мобильных устройствах */
+  }
+}
 
   .nav-links.active {
     display: flex; /* Показываем меню при активации */
@@ -272,7 +278,6 @@ a:hover {
   .project-card {
     width: 90%;
   }
-}
 
 /* Image Slider Styles */
 .slider {
