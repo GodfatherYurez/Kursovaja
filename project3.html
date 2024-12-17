@@ -3,9 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project 2 - Nordic Aurora Portfolio</title>
+  <title>Project 3 - Nordic Aurora Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <script defer src="project.js"></script>
+    <script defer src="project.js"></script>
+  <style>
+    /* Minimalist Grid Layout */
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .image-gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .image-large {
+      grid-column: span 12;
+      aspect-ratio: 16 / 10;
+    }
+
+    .image-small {
+      grid-column: span 6;
+      aspect-ratio: 16 / 10;
+    }
+
+    @media (max-width: 768px) {
+      .image-large, .image-small {
+        grid-column: span 12;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -16,15 +48,11 @@
   <!-- Main Content -->
   <main>
     <section class="project-detail">
-      <!-- Image Slider -->
-      <div class="slider">
-        <button class="prev-btn">←</button>
-        <div class="slider-images">
-          <img src="project3.1.jpg" alt="Project 2 Image 1">
-          <img src="project3.2.jpg" alt="Project 2 Image 2">
-          <img src="project3.jpg" alt="Project 2 Image 3">
-        </div>
-        <button class="next-btn">→</button>
+      <!-- Minimalist Grid Gallery -->
+      <div class="image-gallery">
+        <img src="project3.1.jpg" alt="Паркинг Image 1" class="image-large">
+        <img src="project3.2.jpg" alt="Паркинг Image 2" class="image-small">
+        <img src="project3.jpg" alt="Паркинг Image 3" class="image-small">
       </div>
 
       <p class="project-description">
@@ -33,19 +61,24 @@
         Не использовано ни одной заготовки, что не может не радовать. Собственно, в этом и прелесть проекта — 
         максимум автоматизации и минимум требований. Сделан приблизительно 15.09.2024.
       </p>
+
+      <!-- Like Section -->
       <div class="like-section">
         <button id="like-button">Нравится</button>
         <span id="like-count">0</span> отметок
       </div>
+
+      <!-- Comment Section -->
       <div class="comment-section">
         <textarea id="comment-box" placeholder="Оставьте сообщение..."></textarea>
         <button id="submit-comment">Опубликовать</button>
         <ul id="comment-list"></ul>
       </div>
     </section>
+
     <!-- Back to Main -->
     <div class="back-to-main">
-      <a href="index.html">← На Главную</a>
+      <a href="index.html">&larr; На Главную</a>
     </div>
   </main>
 

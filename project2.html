@@ -5,7 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project 2 - Nordic Aurora Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <script defer src="project.js"></script>
+    <script defer src="project.js"></script>
+  <style>
+    /* 3D Card Flip Effect */
+    .bottle-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      perspective: 1000px;
+    }
+
+    .bottle-card {
+      width: 100%;
+      max-width: 300px;
+      aspect-ratio: 16 / 9;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+    }
+
+    .bottle-card:hover {
+      transform: rotateY(180deg);
+    }
+
+    .bottle-card .front, .bottle-card .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 8px;
+    }
+
+    .bottle-card .front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .bottle-card .back {
+      background: #333;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: rotateY(180deg);
+      font-size: 1rem;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -16,36 +69,63 @@
   <!-- Main Content -->
   <main>
     <section class="project-detail">
-      <!-- Image Slider -->
-      <div class="slider">
-        <button class="prev-btn">←</button>
-        <div class="slider-images">
-          <img src="project2.1.jpg" alt="Project 2 Image 1">
-          <img src="project2.2.jpg" alt="Project 2 Image 2">
-          <img src="project2.3.jpg" alt="Project 2 Image 3">
+      <!-- Bottle Showcase with Flip Effect -->
+      <div class="bottle-container">
+        <div class="bottle-card">
+          <div class="front">
+            <img src="project2.1.jpg" alt="Бутылочка 1">
+          </div>
+          <div class="back">
+            <p>Общий вид, хорошо видна форма.</p>
+            <p>Форма создавалась как фигура вращения</p>
+          </div>
         </div>
-        <button class="next-btn">→</button>
+
+        <div class="bottle-card">
+          <div class="front">
+            <img src="project2.2.jpg" alt="Бутылочка 2">
+          </div>
+          <div class="back">
+            <p>Ракурс, хорошо показывающий освещение.</p>
+            <p>При работе с прозрачными или отражающими объектами важно
+            правильно настроить освещение и блики</p>
+          </div>
+        </div>
+
+        <div class="bottle-card">
+          <div class="front">
+            <img src="project2.3.jpg" alt="Бутылочка 3">
+          </div>
+          <div class="back">
+            <p>Ракурс "на просвет", по очереди.</p>
+            <p>Как можно увидеть, бутылки достаточно прозрачны чтобы
+            их было видно и не достаточно, чтобы сливаться</p>
+          </div>
+        </div>
       </div>
 
       <p class="project-description">
-        "Пузырьки" — довольно простой проект, созданный с помощью процедурного моделирования. 
-        На самом деле, процедурное здесь абсолютно всё — от формы бутылки до текстуры стекла. 
-        Не использовано ни одной заготовки, что не может не радовать. Собственно, в этом и прелесть проекта — 
-        максимум автоматизации и минимум требований. Сделан приблизительно 15.09.2024.
+        "Пузырьки" — проект, демонстрирующий процедурное моделирование бутылок с различной стилистикой. Каждая форма и текстура
+        создавались автоматически, что делает проект идеальным примером процедурного дизайна. Наслаждайтесь 3D-просмотром!
       </p>
+
+      <!-- Like Section -->
       <div class="like-section">
         <button id="like-button">Нравится</button>
         <span id="like-count">0</span> отметок
       </div>
+
+      <!-- Comment Section -->
       <div class="comment-section">
         <textarea id="comment-box" placeholder="Оставьте сообщение..."></textarea>
         <button id="submit-comment">Опубликовать</button>
         <ul id="comment-list"></ul>
       </div>
     </section>
+
     <!-- Back to Main -->
     <div class="back-to-main">
-      <a href="index.html">← На Главную</a>
+      <a href="index.html">&larr; На Главную</a>
     </div>
   </main>
 

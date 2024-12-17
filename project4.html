@@ -3,9 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project 1 - Nordic Aurora Portfolio</title>
+  <title>Project 4 - Nordic Aurora Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <script defer src="project.js"></script>
+    <script defer src="project.js"></script>
+  <style>
+    /* Grid Layout for Images */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .image-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    /* Video Player */
+    .video-container {
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    video {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -16,37 +42,47 @@
   <!-- Main Content -->
   <main>
     <section class="project-detail">
-      <!-- Image Slider -->
-      <div class="slider">
-        <button class="prev-btn">←</button>
-        <div class="slider-images">
-          <img src="project4.jpg" alt="Project 1 Image 1">
-          <img src="project4.3.jpg" alt="Project 1 Image 2">
-        </div>
-        <button class="next-btn">→</button>
+      <!-- Image Grid -->
+      <div class="image-grid">
+        <img src="project4.jpg" alt="Project Image 1">
+        <img src="project4.3.jpg" alt="Project Image 2">
       </div>
 
+      <!-- Video Player -->
+      <div class="video-container">
+        <h2>Итоговый результат</h2>
+        <video controls>
+          <source src="video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <!-- Project Description -->
       <p class="project-description">
         На самом деле, довольно простой, но от того не менее интересный проектик.
         Сделан буквально за 1-2 вечера, по просьбе руководителей Центра культуры и творчества РТУ МИРЭА. Задачей
         было создание логотипа готовящегося КНООПС ФЕСТа, его стилизация и доработки. Несколько наиболее удачных
         вариантов расположения текста и освещения представлены выше. Итоговый вариант для оформления выбран именно
-        среди них. Повторюсь, хоть проектик и не сложный, опыт в работе с дизайном текста мне явно ещё много где 
+        среди них. Повторюсь, хоть проектик и не сложный, опыт в работе с дизайном текста мне явно ещё много где
         пригодится.
       </p>
+
+      <!-- Like Section -->
       <div class="like-section">
         <button id="like-button">Нравится</button>
         <span id="like-count">0</span> отметок
       </div>
+      <!-- Comment Section -->
       <div class="comment-section">
         <textarea id="comment-box" placeholder="Оставьте сообщение..."></textarea>
         <button id="submit-comment">Опубликовать</button>
         <ul id="comment-list"></ul>
       </div>
     </section>
+
     <!-- Back to Main -->
     <div class="back-to-main">
-      <a href="index.html">← На Главную</a>
+      <a href="index.html">&larr; На Главную</a>
     </div>
   </main>
 
